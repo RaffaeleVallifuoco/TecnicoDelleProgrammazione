@@ -33,10 +33,6 @@ public class Cellulare {
         return ultimoChiamato;
     }
 
-    public void setCreditoResiduo(Double creditoResiduo) {
-        this.creditoResiduo = creditoResiduo;
-    }
-
     public String getGestoreTelefonico() {
         return gestoreTelefonico;
     }
