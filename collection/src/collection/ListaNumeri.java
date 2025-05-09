@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class ListaNumeri {
 
+    // LISTA
+
     public static void lista() {
 
         Scanner scanner = new Scanner(System.in);
@@ -51,6 +53,8 @@ public class ListaNumeri {
 
     }
 
+    // SET
+
     public static void set() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> numeri = new ArrayList<>();
@@ -78,6 +82,8 @@ public class ListaNumeri {
         }
 
     }
+
+    // MAP
 
     public static void map() {
         Scanner scanner = new Scanner(System.in);
