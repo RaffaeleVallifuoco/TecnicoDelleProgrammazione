@@ -17,6 +17,8 @@ public class TestMacchinaCaffe {
         nespresso.svuota();
         nespresso.eroga("espresso");
 
+        System.out.println("\n ---Buon Caffè -----\n");
+
     }
 
 }

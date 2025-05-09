@@ -101,11 +101,7 @@ public class MacchinaCaffe {
         if (this.capacitàSerbatoio >= caffe.getLunghezza()) {
             if (this.caffeErogatiUltimoSvuotamento < this.capacitàCassettoCapsule) {
                 System.out.println("\nErogazione in corso ...\n");
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                pausa(2000);
                 consumoCaffe(caffe);
             } else {
                 System.out.println("Cassetto capsule pieno");
@@ -125,6 +121,7 @@ public class MacchinaCaffe {
     public void svuota() {
         System.out.println(
                 "Sto svuotando ...");
+        pausa(1000);
         this.capacitàCassettoCapsule = this.capacitàCassettoCapsuleMax;
         this.caffeErogatiUltimoSvuotamento = 0;
     }
@@ -134,4 +131,15 @@ public class MacchinaCaffe {
                 "Sto riempiendo...");
         this.capacitàSerbatoio = capacitàSerbatoioMax;
     }
+
+    // METODO STATICO PER INSERIRE UNA PAUSA
+
+    public static void pausa(int millisecondi) {
+        try {
+            Thread.sleep(millisecondi);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
