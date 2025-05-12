@@ -7,6 +7,7 @@ public abstract class Veicolo {
     private String targa;
     private int annoImmatricolazione;
     private Double noleggioGiornaliero;
+    private boolean disponibile = true;
 
     public String getModello() {
         return modello;
@@ -40,6 +41,14 @@ public abstract class Veicolo {
         this.noleggioGiornaliero = noleggioGiornaliero;
     }
 
+    public boolean isDisponibile() {
+        return disponibile;
+    }
+
+    public void setDisponibile(boolean disponibile) {
+        this.disponibile = disponibile;
+    }
+
     public Veicolo() {
 
     }
@@ -51,10 +60,14 @@ public abstract class Veicolo {
         this.noleggioGiornaliero = noleggioGiornaliero;
     }
 
-    public void calcolaNoleggio(int numeroDigiorni) {
-        Double costoNoleggio = numeroDigiorni * this.noleggioGiornaliero;
-        System.out.println("\nIl costo del noleggio del veicolo richiesto per i giorni inseriti ammonta a : "
-                + costoNoleggio + " €");
+    public double calcolaNoleggio(int giorni) {
+        if (!disponibile) {
+            System.out.println("Il veicolo non è disponibile al momento.");
+            return 0;
+        }
+        double costo = giorni * noleggioGiornaliero;
+        System.out.println("Costo noleggio per " + giorni + " giorni: " + costo + "€");
+        return costo;
     }
 
     @Override

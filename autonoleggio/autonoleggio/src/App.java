@@ -22,7 +22,7 @@ public class App {
 
         while (!condizione) {
             System.out.println(
-                    "\nCosa vuoi fare: \n1) Visualizza flotta veicoli\n2) Aggiungi un veicolo alla flotta\n3) Rimuovi un veicolo dalla flotta\n4) Visualizza info noleggio");
+                    "\nCosa vuoi fare: \n1) Visualizza flotta veicoli\n2) Aggiungi un veicolo alla flotta\n3) Rimuovi un veicolo dalla flotta\n4) Visualizza info noleggio\n5) Modifica disponibilità veicolo\n");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consuma newline residuo
 
@@ -111,6 +111,25 @@ public class App {
                         System.out.println("\n--- CALCOLO COMPLETATO ---");
                     } else {
                         System.err.println("\nIndice non valido!");
+                    }
+                }
+                case 5 -> {
+                    System.out.println("\nFlotta attuale:");
+                    for (int i = 0; i < flottaVeicoli.size(); i++) {
+                        System.out.println(i + ") " + flottaVeicoli.get(i));
+                    }
+
+                    System.out.print("\nInserisci l'indice del veicolo da modificare: ");
+                    int index = scanner.nextInt();
+
+                    if (index >= 0 && index < flottaVeicoli.size()) {
+                        Veicolo veicolo = flottaVeicoli.get(index);
+                        boolean statoAttuale = veicolo.isDisponibile();
+                        veicolo.setDisponibile(!statoAttuale);
+                        System.out.println(
+                                "\nIl veicolo è ora " + (veicolo.isDisponibile() ? "DISPONIBILE" : "NON DISPONIBILE"));
+                    } else {
+                        System.err.println("Indice non valido.");
                     }
                 }
                 default -> System.err.println("\nAttenzione! Scelta non corretta\n");
