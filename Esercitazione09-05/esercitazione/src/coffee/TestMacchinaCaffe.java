@@ -8,6 +8,8 @@ public class TestMacchinaCaffe {
 
         MacchinaCaffe nespresso = new MacchinaCaffe("Nespresso", "Inissia", 1000, 4);
 
+        // switch condition : espresso, espressodoppio
+
         nespresso.eroga("espresso");
         nespresso.eroga("espresso");
         nespresso.eroga("espresso");
