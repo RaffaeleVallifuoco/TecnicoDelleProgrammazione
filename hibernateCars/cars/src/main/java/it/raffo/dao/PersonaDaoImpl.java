@@ -16,6 +16,8 @@ import it.raffo.model.Persona;
 
 public class PersonaDaoImpl implements InterfacciaDao<Persona> {
 
+    // FIND ALL
+
     @Override
     public List<Persona> findAll() {
         List<Persona> persone = new ArrayList<>();
@@ -33,6 +35,8 @@ public class PersonaDaoImpl implements InterfacciaDao<Persona> {
 
         return persone;
     }
+
+    // FIND BY ID
 
     @Override
     public Persona findbyId(Integer id) {
@@ -52,6 +56,8 @@ public class PersonaDaoImpl implements InterfacciaDao<Persona> {
 
         return persona;
     }
+
+    // INSERT
 
     @Override
     public void insertMany(List<Persona> persone) {

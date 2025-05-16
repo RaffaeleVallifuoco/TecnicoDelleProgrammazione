@@ -1,41 +1,31 @@
 package it.raffo.dao;
 
 import java.util.List;
-
 import java.util.ArrayList;
-
 import org.hibernate.query.Query;
-
 import it.raffo.configuration.HibernateUtil;
-import it.raffo.model.Auto;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
-import org.hibernate.query.NativeQuery;
+import it.raffo.model.Personaggio;
 
-public class AutoDaoImpl implements InterfacciaDao<Auto> {
+public class CharacterDaoImpl implements DaoInterface<Personaggio> {
 
     // FIND ALL
 
     @Override
-    public List<Auto> findAll() {
+    public List<Personaggio> findAll() {
 
-        List<Auto> cars = new ArrayList<>();
+        List<Personaggio> characters = new ArrayList<>();
 
         try {
             SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
             Session session = sessionFactory.openSession();
 
-            // Query in linguaggio SQL
-
-            NativeQuery<Auto> querySqlUno = session.createNativeQuery("SELECT * FROM auto", Auto.class);
-            cars = querySqlUno.getResultList();
-
-            // Query in Linguaggio HQL
-            // autori = session.find("FROM libro", , null) ...........
+            Query<Personaggio> queryHql = session.createQuery("FROM Personaggio", Personaggio.class);
+            characters = queryHql.getResultList();
 
             session.close();
 
@@ -47,49 +37,22 @@ public class AutoDaoImpl implements InterfacciaDao<Auto> {
             System.err.println("Eccezione generica");
 
         }
-        return cars;
-
-    }
-
-    // FIND BY ID
-
-    @Override
-    public Auto findbyId(Integer id) {
-        Auto car = null;
-
-        try {
-            SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-            Session session = sessionFactory.openSession();
-            Query<Auto> query = session.createQuery("from<Auto where id = :id", Auto.class);
-            query.setParameter("id", id);
-            car = query.getSingleResult();
-
-            session.close();
-
-        } catch (HibernateException e) {
-            e.printStackTrace();
-            System.err.println("Eccezione Hibernate durante esecuzione query");
-
-        } catch (Exception e) {
-            System.err.println("Eccezione generica");
-
-        }
-
-        return car;
+        return characters;
 
     }
 
     // INSERT
 
     @Override
-    public void insertMany(List<Auto> cars) {
+    public void insertMany(List<Personaggio> characters) {
+
         Transaction transaction = null;
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
 
-            for (Auto car : cars) {
-                session.merge(car);
+            for (Personaggio character : characters) {
+                session.merge(character);
             }
 
             transaction.commit();
@@ -112,5 +75,4 @@ public class AutoDaoImpl implements InterfacciaDao<Auto> {
 
         }
     }
-
 }
