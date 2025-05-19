@@ -22,7 +22,7 @@ public class Main {
         System.out.println("\nINSERISCI GIOCHI\n");
         gamesList.add(new Videogioco(null, "PES21", 49.99, "Sport", "Footnell game", 8));
 
-        games.insertMany(gamesList);
+        // games.insertMany(gamesList);
 
         System.out.println("\nSTAMPA GIOCHI\n");
         System.out.println(games.findAll());
@@ -30,7 +30,7 @@ public class Main {
         System.out.println("\nINSERISCI PERSONAGGI\n");
         charactersList.add(new Personaggio(null, "Ronaldo", 48, "fenomeno", "Inter", "Brasiliana"));
 
-        character.insertMany(charactersList);
+        // character.insertMany(charactersList);
 
         System.out.println("\nSTAMPA PERSONAGGI\n");
         System.out.println(character.findAll());

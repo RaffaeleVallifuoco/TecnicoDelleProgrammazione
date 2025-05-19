@@ -32,6 +32,10 @@ public class Personaggio {
     @Column(name = "race", nullable = true)
     private String race;
 
+    @ManyToOne
+    @JoinColumn(name = "id_videogames")
+    private Videogioco videogioco;
+
     // CONSTRUCTORS
 
     public Personaggio() {
@@ -95,10 +99,6 @@ public class Personaggio {
     public void setRace(String race) {
         this.race = race;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "id_videogames")
-    private Videogioco videogioco;
 
     // TOSTRING
 

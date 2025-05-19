@@ -15,8 +15,9 @@
 <property name="current_session_context_class">thread</property>
 <property name="hbm2ddl.auto">update</property>
 
-<mapping class = "it.raffo.model.Personaggio"/> 
-<mapping class = "it.raffo.model.Videogioco"/> 
+<mapping class = "it.raffo.model.Corso"/> 
+<mapping class = "it.raffo.model.Matricola"/> 
+<mapping class = "it.raffo.model.Studente"/> 
 
 
 

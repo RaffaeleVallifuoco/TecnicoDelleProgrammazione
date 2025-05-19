@@ -1,0 +1,7 @@
+it/raffo/model/Videogioco.class
+it/raffo/dao/CharacterDaoImpl.class
+it/raffo/dao/VideogamesDaoImpl.class
+it/raffo/dao/DaoInterface.class
+it/raffo/model/Personaggio.class
+it/raffo/Main.class
+it/raffo/configuration/HibernateUtil.class
