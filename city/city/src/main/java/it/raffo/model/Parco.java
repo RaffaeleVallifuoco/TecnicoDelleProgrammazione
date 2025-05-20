@@ -57,6 +57,8 @@ public class Parco {
     @JoinColumn(name = "id_citta", referencedColumnName = "codice")
     private City citta;
 
+    // CONSTRUCTORS
+
     public Parco() {
     }
 
@@ -74,6 +76,120 @@ public class Parco {
         this.zoo = zoo;
         this.citta = citta;
     }
+
+    public Parco(String nome, double ettari, int numeroAlberi, boolean lago, boolean velodromo, boolean parcoGiochi,
+            boolean campoDiBocce, boolean campoDIGolf, boolean giardinoBotanico, boolean zoo) {
+        this.nome = nome;
+        this.ettari = ettari;
+        this.numeroAlberi = numeroAlberi;
+        this.lago = lago;
+        this.velodromo = velodromo;
+        this.parcoGiochi = parcoGiochi;
+        this.campoDiBocce = campoDiBocce;
+        this.campoDIGolf = campoDIGolf;
+        this.giardinoBotanico = giardinoBotanico;
+        this.zoo = zoo;
+    }
+
+    // GETTER & SETTER
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getEttari() {
+        return ettari;
+    }
+
+    public void setEttari(double ettari) {
+        this.ettari = ettari;
+    }
+
+    public int getNumeroAlberi() {
+        return numeroAlberi;
+    }
+
+    public void setNumeroAlberi(int numeroAlberi) {
+        this.numeroAlberi = numeroAlberi;
+    }
+
+    public boolean isLago() {
+        return lago;
+    }
+
+    public void setLago(boolean lago) {
+        this.lago = lago;
+    }
+
+    public boolean isVelodromo() {
+        return velodromo;
+    }
+
+    public void setVelodromo(boolean velodromo) {
+        this.velodromo = velodromo;
+    }
+
+    public boolean isParcoGiochi() {
+        return parcoGiochi;
+    }
+
+    public void setParcoGiochi(boolean parcoGiochi) {
+        this.parcoGiochi = parcoGiochi;
+    }
+
+    public boolean isCampoDiBocce() {
+        return campoDiBocce;
+    }
+
+    public void setCampoDiBocce(boolean campoDiBocce) {
+        this.campoDiBocce = campoDiBocce;
+    }
+
+    public boolean isCampoDIGolf() {
+        return campoDIGolf;
+    }
+
+    public void setCampoDIGolf(boolean campoDIGolf) {
+        this.campoDIGolf = campoDIGolf;
+    }
+
+    public boolean isGiardinoBotanico() {
+        return giardinoBotanico;
+    }
+
+    public void setGiardinoBotanico(boolean giardinoBotanico) {
+        this.giardinoBotanico = giardinoBotanico;
+    }
+
+    public boolean isZoo() {
+        return zoo;
+    }
+
+    public void setZoo(boolean zoo) {
+        this.zoo = zoo;
+    }
+
+    public City getCitta() {
+        return citta;
+    }
+
+    public void setCitta(City citta) {
+        this.citta = citta;
+    }
+
+    // TO STRING
 
     @Override
     public String toString() {

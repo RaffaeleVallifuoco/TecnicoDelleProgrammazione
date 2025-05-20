@@ -11,12 +11,12 @@ import org.hibernate.exception.ConstraintViolationException;
 import org.hibernate.query.Query;
 
 import it.raffo.configuration.HibernateUtil;
-import it.raffo.model.City;
+import it.raffo.model.Parco;
 
-public class CityDaoImpl implements DaoInterface<City> {
+public class ParcoDaoImpl implements DaoInterface<Parco> {
 
     @Override
-    public void insert(City istance) {
+    public void insert(Parco istance) {
 
         Transaction transaction = null;
 
@@ -48,22 +48,24 @@ public class CityDaoImpl implements DaoInterface<City> {
         } catch (Exception e) {
 
             System.err.println("Eccezione generica in insert");
+            e.printStackTrace();
 
             if (transaction != null)
                 transaction.rollback();
+
         }
     }
 
     @Override
-    public List<City> findAll() {
-        List<City> cities = new ArrayList<>();
+    public List<Parco> findAll() {
+        List<Parco> parchi = new ArrayList<>();
 
         try {
             SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
             Session session = sessionFactory.openSession();
 
-            Query<City> queryHql = session.createQuery("from City", City.class);
-            cities = queryHql.getResultList();
+            Query<Parco> queryHql = session.createQuery("FROM Parco", Parco.class);
+            parchi = queryHql.getResultList();
 
             session.close();
 
@@ -73,16 +75,15 @@ public class CityDaoImpl implements DaoInterface<City> {
 
         } catch (Exception e) {
             System.err.println("Eccezione generica");
-            e.printStackTrace();
 
         }
-        return cities;
+        return parchi;
 
     }
 
     @Override
     public void remove(Integer pk) {
-        City citta = new City();
+        Parco parco = new Parco();
         Transaction transaction = null;
 
         try {
@@ -90,11 +91,11 @@ public class CityDaoImpl implements DaoInterface<City> {
             Session session = sessionFactory.openSession();
             transaction = session.beginTransaction();
 
-            // Query<City> queryHql = session.createQuery("FROM Citta where id = :id",
-            // City.class);
+            // Query<Parco> queryHql = session.createQuery("FROM Citta where id = :id",
+            // Parco.class);
             // queryHql.setParameter("id", pk);
-            citta = session.find(City.class, pk);
-            session.remove(citta);
+            parco = session.find(Parco.class, pk);
+            session.remove(parco);
             transaction.commit();
             session.close();
 
@@ -113,7 +114,7 @@ public class CityDaoImpl implements DaoInterface<City> {
 
     @Override
     public void update(Integer id, String updatedValue) {
-        City citta = new City();
+        Parco parco = new Parco();
         Transaction transaction = null;
 
         try {
@@ -121,9 +122,9 @@ public class CityDaoImpl implements DaoInterface<City> {
             Session session = sessionFactory.openSession();
             transaction = session.beginTransaction();
 
-            citta = session.find(City.class, id);
-            citta.setNome(updatedValue);
-            session.merge(citta);
+            parco = session.find(Parco.class, id);
+            parco.setNome(updatedValue);
+            session.merge(parco);
             transaction.commit();
             session.close();
 
