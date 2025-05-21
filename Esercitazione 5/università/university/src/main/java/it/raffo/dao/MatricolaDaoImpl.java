@@ -50,7 +50,7 @@ public class MatricolaDaoImpl implements DaoInterface<Matricola> {
             queryHql.setParameter("id", id);
             matricola = queryHql.uniqueResult();
 
-            session.close();
+            session.close();query
 
         } catch (HibernateException e) {
             e.printStackTrace();
