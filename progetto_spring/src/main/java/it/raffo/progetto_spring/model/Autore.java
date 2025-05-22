@@ -40,6 +40,12 @@ public class Autore {
         this.cognome = cognome;
     }
 
+    public Autore(String nome, String cognome, List<Libro> listaLibri) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.listaLibri = listaLibri;
+    }
+
     public Integer getId() {
         return id;
     }

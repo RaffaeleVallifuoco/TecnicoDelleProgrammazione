@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th='http://www.thymeleaf.org' data-bs-theme="dark" lang=en>
+
+<head>
+    <title>Secondo Progetto Spring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    </link>
+</head>
+
+<body style="padding-top: 70px;">
+    <header class="sticky-top">
+    
+        <nav class="navbar glass_nav fixed-top shadow">
+            <div class="container-fluid my-o py-0 ">
+                <a class="navbar-brand icon-link icon-link-hover fs-4 my-0 py-0 mx-5" th:href="@{/}">
+                    RaffoLIBRI
+                </a>
+                <div class=" me-auto mx-4 ">
+    
+                </div>
+    
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="bi bi-search fs-4 fw-bold"></i>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto my-3 mb-lg-0 d-flex text-end">
+                        <li>
+                            <form class="d-flex ms-auto w-25 opacity-50" role="search">
+                                <input type="text" name="searchContent" class="form-control me-2 border-0 rounded"
+                                    placeholder="Filtra per titolo" aria-label="Cerca nel sito">
+                                <button class="btn mdb-button btn-outline-tertiary rounded-pill" type="submit">Vai</button>
+                            </form>
+                        </li>
+                        <li>
+                            <div class="fs-6 opacity-50">
+                                <a class="btn btn-dark  p-2 icon-link icon-link-hover text-decoration-none  text-white rounded-pill"
+                                    th:href="@{/home}">
+                                    <i class="bi bi-x" style="color: rgb(255, 255, 255);"></i>
+                                    <span class="fs-6 mt-1"> rimuovi filtri</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container text-center mt-5 pt-5">
+            <div class="card card_bg p-4">
+                <div class="centrato card_body">
+                    <h3 class="tagTitolo">Spring Library demo</h3>
+                    <p class="mt-2">Pagina di benvenuto della parte Web</p>
+                    <fieldset class="formDiv">
+                        <legend class="">Elenco Libri</legend>
+                        <form class="unaForm" action="/findAllLibri">
+                            <input type="submit" value="Vai" class="btn btn-primary rounded-pill slider-effect" />
+                        </form>
+                    </fieldset>
+                    <fieldset class="formDiv">
+                        <legend>Elenco degli Autori</legend>
+                        <form class="unaForm" action="/findAllAutori">
+                            <input type="submit" value="Vai" class="btn btn-primary rounded-pill slider-effect" />
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
