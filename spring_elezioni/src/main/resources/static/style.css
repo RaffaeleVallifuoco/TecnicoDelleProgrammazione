@@ -133,13 +133,27 @@ body {
 }
 
 .card {
-    height: 600px;
+    
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
 }
+.squared-btn {
+    width: 120px;
+    height: 100px;
+    margin-top: 60px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid #1E90FF;
+    color: #1E90FF;
+    transition: background-color 0.3s, color 0.3s;
+
 
 .card:hover {
     transform: translateY(-4px);
@@ -263,8 +277,4 @@ body {
 .btn.slider-effect:hover::before {
     left: 125%;
 }
-
-.btn.slider-effect:hover {
-    color: #fff;
-    /* cambia colore testo se vuoi */
 }

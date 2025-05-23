@@ -35,9 +35,10 @@ public class TesseraElettorale {
     }
 
     public TesseraElettorale(String code, Integer personaId, Integer seggioId) {
-        this();
+        this.persona = new Persona();
         this.code = code;
         this.persona.setId(personaId);
+        this.seggio = new Seggio();
         this.seggio.setId(seggioId);
     }
 

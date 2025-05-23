@@ -30,6 +30,11 @@ public class AppController {
     @Autowired
     TesseraRepo tesseraRepo;
 
+    @GetMapping("/index")
+    public String getIndex() {
+        return "/index/index";
+    }
+
     @GetMapping("/persone")
     public String peopleIndex(Model model, @RequestParam(name = "name", required = false) String name) {
 
@@ -60,7 +65,7 @@ public class AppController {
 
             seggiList = seggioRepo.findAll();
 
-        } else if (code == null) {
+        } else if (city == null) {
 
             seggiList = seggioRepo.findByCode(code);
         } else {
