@@ -1,7 +1,5 @@
 package it.raffo.progetto_spring.model;
 
-import org.hibernate.annotations.Comment;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,10 +34,11 @@ public class TesseraElettorale {
     public TesseraElettorale() {
     }
 
-    public TesseraElettorale(String code, Persona persona, Seggio seggio) {
+    public TesseraElettorale(String code, Integer personaId, Integer seggioId) {
+        this();
         this.code = code;
-        this.persona = persona;
-        this.seggio = seggio;
+        this.persona.setId(personaId);
+        this.seggio.setId(seggioId);
     }
 
     // GETTERS & SETTERS

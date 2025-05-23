@@ -18,6 +18,9 @@ public class Persona {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "last_name", nullable = false)
+    private String LastName;
+
     @Column(name = "codice_fiscale", nullable = false, unique = true)
     private String codiceFiscale;
 
@@ -26,8 +29,9 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String name, String codiceFiscale) {
+    public Persona(String name, String lastName, String codiceFiscale) {
         this.name = name;
+        LastName = lastName;
         this.codiceFiscale = codiceFiscale;
     }
 
@@ -55,6 +59,14 @@ public class Persona {
 
     public void setCodiceFiscale(String codiceFiscale) {
         this.codiceFiscale = codiceFiscale;
+    }
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
 
     // TOSTRING

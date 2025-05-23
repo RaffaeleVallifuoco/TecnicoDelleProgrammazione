@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>it.raffo</groupId>
-	<artifactId>progetto_spring</artifactId>
+	<artifactId>spring_elezioni</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>progetto_spring</name>
 	<description>Demo project for Spring Boot</description>

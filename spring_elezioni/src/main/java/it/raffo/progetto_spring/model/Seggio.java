@@ -93,7 +93,7 @@ public class Seggio {
         this.region = region;
     }
 
-    // TO STRING
+    // TOSTRING
 
     @Override
     public String toString() {
