@@ -24,7 +24,7 @@
 
         <nav class="navbar glass_nav">
             <div class="container-fluid my-o py-0 ">
-                <a class="navbar-brand icon-link icon-link-hover fs-4 my-0 py-0 mx-5" th:href="@{/}">
+                <a class="navbar-brand icon-link icon-link-hover fs-4 my-0 py-0 mx-5" th:href="@{/index}">
                     RaffoELEZIONI
                 </a>
                 <div class=" me-auto mx-4 ">
@@ -41,14 +41,19 @@
     <main>
         <div class="bg_color overflow">
             <div class="container bg_color pt-5 bg-image"
-                th:style="'background-image: url(' + @{/img/back2.jpg} + ');'">
+                th:style="'background-image: url(' + @{/img/back.avif} + ');'">
                 <div class="row d-flex justify-content-between me-4 pe-4 ms-4 ps-4" style="min-width: 90vw;">
                     <div class="col">
                         <div class="row">
                             <!-- CARD -->
-                                <div class="card card_bg text-center mx-auto" style="max-width: 400px;">
+                                <div class=" glass text-center mx-auto my-5" style="max-width: 400px;">
                                     <div class="card-body card_body">
-                                        <h5 class="card-title mb-3">Benvenuto su RaffoELEZIONI!</h5>
+                                        <div class="row">
+                                            
+                                                <div class="rounded-pill card glass fs-2 my-5">Benvenuto in RaffoElezioni</div>
+                                                <h6>clicca su un link per iniziare la navigazione</h6>
+                                            
+                                        </div>
                                         <div class="d-flex justify-content-center gap-2">
                                             <a th:href="@{/persone}" class="btn  btn-sm squared-btn">Persone</a>
                                             <a th:href="@{/seggi}" class="btn  btn-sm squared-btn">Seggi 2</a>
@@ -69,10 +74,10 @@
         <div class="container my-6 py-5">
             <div class="row">
                 <div class="col-4 ">
-                    <img class="footer_image" th:src="@{/img/RAtech-trasparent.png}" alt="ratech logo">
+                    <img class="footer_image" th:src="@{/img/raffCircle1.png}" alt="ratf logo">
                 </div>
                 <div class="col-3">
-                    <h4>RaffoTECH</h4>
+                    <h4>VotaRaffo</h4>
                     <p class="fs-6 mt-4">Progetto Spring Elezioni-</p>
                 </div>
                 <div class="col-3">

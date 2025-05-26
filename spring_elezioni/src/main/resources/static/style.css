@@ -29,6 +29,7 @@ justify-content: center;
 min-width: 40%;
 max-width: 80%;
 text-align: center;
+    
 }
 
 .ricerca {
@@ -50,9 +51,9 @@ body {
 }
 
 .glass {
-    background: rgba(36, 36, 36, 0.5);
+    background: rgba(9, 85, 123, 0.071);
     backdrop-filter: blur(15px);
-    border-radius: 16px;
+    border-radius: 24px;
     padding: 24px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
@@ -99,6 +100,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    backdrop-filter: blur(20px);
     height: 100%;
     width: 100vw;
     z-index: 1;
@@ -107,6 +109,7 @@ body {
 .bg-image::before {
     content: '';
     position: absolute;
+    backdrop-filter: blur(20px);
     top: 0;
     left: 0;
     right: 0;
@@ -114,6 +117,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: -1;
 }
+
 
 .card_bg {
     background: rgba(5, 0, 44, 0.213);
@@ -124,13 +128,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.carousel_card_bg {
-    background: rgba(89, 88, 97, 0.292);
-    backdrop-filter: blur(12px);
-    border: 0px solid rgba(102, 102, 102, 0.229);
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
 
 .card {
     
@@ -140,50 +137,33 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
 }
+
 .squared-btn {
     width: 120px;
     height: 100px;
     margin-top: 60px;
-    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    background-color: transparent;
     border: 2px solid #1E90FF;
     color: #1E90FF;
     transition: background-color 0.3s, color 0.3s;
-
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-}
-
-
-.carousel_card {
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.4s ease;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: rgba(16, 168, 244, 0.035);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.2);
     z-index: 2;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
-.card_img {
-    min-height: 200px;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 30px;
-    ;
-    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.651);
-}
+
 
 .card-body {
     flex-grow: 1;
@@ -212,69 +192,23 @@ body {
     color: rgb(198, 153, 209);
 }
 
-.accent_category {
-    color: rgb(190, 131, 64);
-}
-
-.profile_img {
-    height: 80%;
-    object-fit: fill;
-    display: block;
-    overflow: hidden;
-    margin-left: 25px;
-}
-
-.profile_img_container {
-    width: 200px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.separator {
-    width: 1px;
-    background-color: rgba(0, 0, 0, 0.2);
-    /* Colore del separatore */
-    height: 100%;
-    /* Altezze varie a seconda del contenuto */
-}
-
 .footer_image {
     position: relative;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    width: 220px;
-    height: 200px;
+    width: 200px;
+    height: 280px;
     z-index: 1;
 }
 
 .footer_color {
-    background: rgba(20, 20, 20, 1);
-    min-height: 20vh;
-    background-size: cover;
-    background-position: center;
-}
-.btn.slider-effect {
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s ease;
-}
-
-.btn.slider-effect::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.7s ease;
-    pointer-events: none;
-}
-
-.btn.slider-effect:hover::before {
-    left: 125%;
-}
+        /* backdrop-filter: blur(15px);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 6px 12px rgb(246, 6, 6);
+        transition: all 0.3s ease-in-out;
+    background-position: center; */
+  background-color:rgba(9, 144, 255, 0)
 }

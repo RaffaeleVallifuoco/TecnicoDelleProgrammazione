@@ -24,7 +24,7 @@
 
         <nav class="navbar glass_nav">
             <div class="container-fluid my-o py-0 ">
-                <a class="navbar-brand icon-link icon-link-hover fs-4 my-0 py-0 mx-5" th:href="@{/}">
+                <a class="navbar-brand icon-link icon-link-hover fs-4 my-0 py-0 mx-5" th:href="@{/index}">
                     RaffoELEZIONI
                 </a>
                 
@@ -63,13 +63,19 @@
     <main>
         <div class="bg_color overflow">
             <div class="container bg_color pt-5 bg-image"
-                th:style="'background-image: url(' + @{/img/back2.jpg} + ');'">
+                th:style="'background-image: url(' + @{/img/back.avif} + ');'">
                 <div class="row d-flex justify-content-center me-4 pe-4 ms-4 ps-4" style="min-width: 90vw;">
                     <div class="col-md-8">
                         <div class="row">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead class="table-dark">
-                                <tr class="fs-3 fw-bold m-4">
+                            <div class="col-4">
+                                <div class="rounded-pill card glass fs-3 my-5">Aventi diritto al voto</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- TABLE  -->
+                        <table class=" glass table-hover">
+                            <thead class="table-dark glass">
+                                <tr class="fs-3 fw-bold my-5 py-5">
                                     <th>Nome</th>
                                     <th>Cogome</th>
                                     <th>Codice Fiscale</th>
@@ -90,7 +96,7 @@
                                     <h5 class="card-title my-5"></h5>
                                     <div class="d-flex justify-content-center gap-2">
                                         
-                                        <a th:href="@{/seggi}" class="btn  btn-sm squared-btn">Seggi</a>
+                                        <a th:href="@{/seggi}" class="btn  btn-sm squared-btn glass">Seggi</a>
                                         <a th:href="@{/tessere}" class="btn  btn-sm squared-btn">Tessere</a>
                                     </div>
                                 </div>
@@ -111,11 +117,11 @@
         <div class="container my-6 py-5">
             <div class="row">
                 <div class="col-4 ">
-                    <img class="footer_image" th:src="@{/img/RAtech-trasparent.png}" alt="ratech logo">
+                    <img class="footer_image" th:src="@{/img/raffCircle1.png}" alt="ratf logo">
                 </div>
                 <div class="col-3">
-                    <h4>RaffoTECH</h4>
-                    <p class="fs-6 mt-4">Blog di tecnologia scritto da un appassionato, per gli appassionati-</p>
+                    <h4>VotaRaffo</h4>
+                    <p class="fs-6 mt-4">Progetto Spring Elezioni-</p>
                 </div>
                 <div class="col-3">
                     <h4 class="mb-4">Social Media Links</h4>

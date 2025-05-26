@@ -11,4 +11,6 @@ public interface TesseraRepo extends JpaRepository<TesseraElettorale, Integer> {
 
     List<TesseraElettorale> findByCodeContainingIgnoreCase(String code);
 
+    List<TesseraElettorale> findByPersona_NameContainingIgnoreCase(String name);
+
 }

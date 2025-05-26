@@ -79,17 +79,21 @@ public class AppController {
     }
 
     @GetMapping("/tessere")
-    public String tessereIndex(Model model, @RequestParam(name = "code", required = false) String code) {
+    public String tessereIndex(Model model,
+            @RequestParam(name = "code", required = false) String code,
+            @RequestParam(name = "namePersona", required = false) String namePersona) {
 
         List<TesseraElettorale> tessereList = new ArrayList<>();
 
-        if (code == null) {
+        if (code == null && namePersona == null) {
 
             tessereList = tesseraRepo.findAll();
 
-        } else {
+        } else if (namePersona == null) {
 
             tessereList = tesseraRepo.findByCodeContainingIgnoreCase(code);
+        } else {
+            tesseraRepo.findByPersona_NameContainingIgnoreCase(namePersona);
         }
 
         model.addAttribute("list", tessereList);
